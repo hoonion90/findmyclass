@@ -1,0 +1,27 @@
+{
+  "name": "findmyclass",
+  "version": "1.0.0",
+  "description": "## DB",
+  "main": "index.js",
+  "dependencies": {
+    "lowdb": "^2.1.0",
+    "pm2": "^5.1.0",
+    "serve": "^12.0.0",
+    "serve-favicon": "^2.5.0",
+    "upgrade": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "pm2 start index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoonion90/findmyclass.git"
+  },
+  "author": "hoonion90",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoonion90/findmyclass/issues"
+  },
+  "homepage": "https://github.com/hoonion90/findmyclass#readme"
+}

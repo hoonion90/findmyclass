@@ -6,13 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link href="/css/main.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/neodgm/neodgm.css">
+  <script src="/js/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-602f57604539048e"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3499947765418335" crossorigin="anonymous"></script>
 </head>
 <body>
+  <header>
+    <h1>판타지 게임 속 <br>나의 캐릭터 찾기</h1>
+  </header>
   <main>
-    <h1>판타지 게임 속 나의 캐릭터 찾기</h1>
-    <button>내 캐릭터 확인하기🎮</button>
+    <article class="text-white">
+      <img src="/img/bg/bg00.jpg" style="width: 100%; margin-top: -2px;">
+      <section class="col-12 text-center">
+        <span class="fs-4">총 플레이 인원 수</span><br>
+        <span class="fs-1">4,328 명</span>
+      </section>
+      <section class="col-12 text-center" style="background: #8ba949;">
+        <span class="fs-4">다른 파티원에게 공유하기</span>
+        <div class="addthis_inline_share_toolbox"></div>
+      </section>
+      <section class="col-12 text-center">
+        <span class="fs-4">현재 가장 많은 유형 : </span>
+        <span class="fs-4">레인저</span>
+        <img class="col-10" src="/img/02_레인저.jpg">
+      </section>
+    </article>
   </main>
+  <footer>
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary btn-lg fs-3" type="button" onclick="goTest();">내 캐릭터 확인하기🎮</button>
+    </div>
+  </footer>
+  <script>
+      function goTest(){
+          location.href="/test";
+      }
+  </script>
 </body>
 </html>
