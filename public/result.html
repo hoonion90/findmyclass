@@ -17,9 +17,6 @@
   <main>
     <article class="text-white">
       <img class="bgimg" src="/img/bg/bg01.jpg" style="width: 100%; margin-top: -2px;">
-      <section>
-        <span class="loader">결과 분석 중..</span>
-      </section>
       <section class="col-12 text-center">
         <div class="question row" style="display: none;">
           <div></div>
@@ -130,9 +127,6 @@
     let class_07 = 0;
     let class_08 = 0;
     let class_09 = 0;
-    let max;
-    let maxObj;
-    let mclass;
 
     $(document).ready(function(){
       $(".question").eq(0).show();
@@ -146,22 +140,15 @@
           $('.bgimg').attr('src',`/img/bg/bg${bgnum}.jpg`);
           count += 1;
         }else{
-          $(this).parents(".question").hide();
-          let tmap = [
-            {label: 'class_01', value: class_01},
-            {label: 'class_02', value: class_02},
-            {label: 'class_03', value: class_03},
-            {label: 'class_04', value: class_04},
-            {label: 'class_05', value: class_05},
-            {label: 'class_06', value: class_06},
-            {label: 'class_07', value: class_07},
-            {label: 'class_08', value: class_08},
-            {label: 'class_09', value: class_09}
-          ];
-          max = Math.max.apply(null, tmap.map(key => key.value));
-          maxObj = tmap.find(key => key.value === max);
-          mclass = maxObj.label;
-
+          console.log(class_01);
+          console.log(class_02);
+          console.log(class_03);
+          console.log(class_04);
+          console.log(class_05);
+          console.log(class_06);
+          console.log(class_07);
+          console.log(class_08);
+          console.log(class_09);
         }
       });
     });
