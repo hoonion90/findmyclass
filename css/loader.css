@@ -1,6 +1,7 @@
+.loader{margin:30% 0; text-align: center; /*width: 100%; margin: 0 auto;*/}
 .loader span {
     display: inline-block;
-    margin: 0 -.075em;
+    margin: 0 -.1em;
     animation: loading .7s infinite alternate;
   }
   .loader span:nth-child(2) {
