@@ -1,26 +1,71 @@
-const http = require('http');
-const fs = require('fs');
-const url = require('url');
-const qs = require('querystring');
-const express = require('express');
-const router = express.Router();
+import { join, dirname } from 'path' 
+import { Low, JSONFile } from 'lowdb' 
+import { fileURLToPath } from 'url'
+import fs from 'fs';
+import url from 'url';
+import qs from 'querystring';
+import express from 'express';
+
 const app = express();
 app.use(express.static('.'));
 
-router.get('/', function (request, response, next) {
+app.get('/', function (request, response) {
+    var _url = request.url;
+    var pathname = url.parse(_url, true).pathname;
+    if(pathname === '/'){
+        fs.readFile('./public/index.html', 'utf8', function(err, HTML){
+            response.writeHead(200);
+            response.end(HTML);
+        })
+    } else {
+        response.writeHeadg(404);
+        response.end('Not found');
+    }
+});
+app.get('/test', function (request, response) {
+    var _url = request.url;
+    var pathname = url.parse(_url, true).pathname;
+    if(pathname === '/test'){
+        fs.readFile('./public/find_page.html', 'utf8', function(err, HTML){
+            response.writeHead(200);
+            response.end(HTML);
+        })
+    } else {
+        response.writeHeadg(404);
+        response.end('Not found');
+    }
+});
+app.get('/result', function (request, response) {
     var _url = request.url;
     var queryData = url.parse(_url, true).query;
     var pathname = url.parse(_url, true).pathname;
-    console.log(_url);
-    console.log(queryData);
-    console.log(pathname);
-    if(pathname === '/'){
-        console.log('in');
-        // fs.readFile('./public/index.html', 'utf8', function(err, HTML){
-        //     response.writeHead(200);
-        //     response.end(HTML);
-        // })
-        response.render("public/index")
+    if(pathname === '/result'){
+        fs.readFile('./public/result_page.html', 'utf8', function(err, HTML){
+            response.writeHead(200);
+            response.end(HTML);
+        })
+    } else {
+        response.writeHeadg(404);
+        response.end('Not found');
     }
 });
-//  app.listen(3000);
+app.get('/result', function (request, response) {
+    var _url = request.url;
+    var queryData = url.parse(_url, true).query;
+    var pathname = url.parse(_url, true).pathname;
+    if(pathname === '/result'){
+        fs.readFile('./public/result_page.html', 'utf8', function(err, HTML){
+            response.writeHead(200);
+            response.end(HTML);
+        })
+    } else {
+        response.writeHeadg(404);
+        response.end('Not found');
+    }
+});
+app.post('/result', function (request, response) {
+
+    response.writeHead(200);
+    response.end();
+}
+ app.listen(3000);

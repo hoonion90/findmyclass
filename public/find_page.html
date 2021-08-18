@@ -60,6 +60,8 @@
           max = Math.max.apply(null, tmap.map(key => key.value));
           maxObj = tmap.find(key => key.value === max);
           mclass = maxObj.label;
+          $('#mclass').val(mclass);
+          document.main.submit();
           $('.copyright').hide();
           window.setTimeout(function(){
             loaded();
@@ -67,6 +69,7 @@
         }
       });
     });
+
     function loaded(){
       $('#btnConfirm').fadeIn();
       window.setTimeout(function(){
@@ -193,10 +196,14 @@
         </div>
       </section>
     </article>
+    <iframe name="frAttachFiles" style="display:none;"></iframe>
+    <form id="mainForm" name="main" method="post" action="/result">
+      <input id="mclass" type="hidden" name="class" value=""/>
+    </form>
   </main>
   <footer>
     <button id="btnConfirm" class="btn btn-primary btn-lg fs-3" type="button" onclick="goResult();" style="display: none; width:100%; max-width:100%;">결과 확인하기</button>
-    <div id="ads" style="display:none;">----
+    <div id="ads" style="display:none;">
       <amp-ad width="100vw" height="320"
       type="adsense"
       data-ad-client="ca-pub-3499947765418335"
