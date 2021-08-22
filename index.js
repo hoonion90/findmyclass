@@ -24,7 +24,7 @@ app.get('/', function (request, response) {
     console.log(players);
     var _url = request.url;
     var pathname = url.parse(_url, true).pathname;
-    response.render('./public/index.ejs',{'players': players, mostClass: '레인저', mostclassImg:'/img/02_레인저.jpg'});
+    response.render('./public/index.ejs',{'players': numberWithCommas(players), mostClass: '레인저', mostClassImg:'02_class.jpg'});
 });
 app.get('/test', function (request, response) {
     var _url = request.url;
@@ -42,4 +42,11 @@ app.post('/result', function (request, response) {
     response.writeHead(200);
     response.end();
 });
-app.listen(3000);
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+//app.listen(3000);
+const PORT = process.env.PORT;
+app.listen(PORT);
