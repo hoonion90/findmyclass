@@ -1,14 +1,14 @@
-import { join, dirname } from 'path'
-import { fileURLToPath } from 'url'
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { LowSync, JSONFileSync } from "lowdb";
-import _ from 'lodash'
+import _ from 'lodash';
 import url from 'url';
 import express from 'express';
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const file = join(__dirname, 'db.json')
-const adapter = new JSONFileSync(file)
-const db = new LowSync(adapter)
+const file = join(__dirname, 'db.json');
+const adapter = new JSONFileSync(file);
+const db = new LowSync(adapter);
 
 app.set('view engine','ejs');
 app.set('views',__dirname);
@@ -21,12 +21,12 @@ app.get('/', function (request, response) {
     let players = db.chain.get('players').value();
     let resultObj = db.chain.get('result').value();
     let result = _.get(resultObj, 'class1');
-    console.log(db.get('visitors'));
-    db.chain.update('visitors', n => n + 1);
-    console.log(result);
-    let _url = request.url;
-    let pathname = url.parse(_url, true).pathname;
-    response.render('./public/index.ejs',{'players': numberWithCommas(players), mostClass: '레인저', mostClassImg:'02_class.jpg'});
+    let hashClass = db.chain.get('class_count').value();
+    let max = Object.keys(hashClass).reduce((a, v) => Math.max(a, hashClass[v]), -Infinity);
+    let maxClass = Object.keys(hashClass).filter(v => hashClass[v] === max);
+    let maxClassImg = _.get(db.chain.get('class_img').value(),maxClass[0]);
+    let maxClassName = _.get(db.chain.get('class_name').value(),maxClass[0]);
+    response.render('./public/index.ejs',{'players': numberWithCommas(players), mostClass: maxClassName, mostClassImg: maxClassImg});
 });
 app.get('/test', function (request, response) {
     let _url = request.url;
