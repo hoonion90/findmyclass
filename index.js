@@ -61,6 +61,6 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-app.listen(3000);
-//const PORT = process.env.PORT;
-// app.listen(PORT);
+// app.listen(3000);
+const PORT = process.env.PORT;
+app.listen(PORT);
