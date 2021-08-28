@@ -25,7 +25,7 @@ body{
     line-height: 1.625;
     color: #555759;
     text-align: left;
-    background-color: #fff;
+    background-color: rgb(232 232 232);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -43,3 +43,9 @@ footer{position:fixed; bottom: 0; width: 100%; max-width: 600px;}
 .question button{padding: 2px 0;}
 .test-body{background: #7f4c2f;}
 footer .copyright{width:100%; max-width: 600px; text-align: center; color: #fff; background-color: #555759;}
+
+/*result*/
+.result-main{background: #fff;}
+.result-main article{background: #fff;}
+.result-main section{background: #0d2f69;}
+.result-msg {background-color:#051b3e; padding: 20px; border-radius: 5px;}
