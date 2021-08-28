@@ -53,6 +53,8 @@ app.post('/resultcount', function (request, response) {
     db.write();
     db.chain.update('class_count_sum', n => n + 1).value();
     db.write();
+    db.chain.update('players', n => n + 1).value();
+    db.write();
     response.writeHead(200);
     response.end();
 });
