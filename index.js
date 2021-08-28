@@ -23,6 +23,9 @@ app.get('/', function (request, response) {
     let maxClass = Object.keys(hashClass).filter(v => hashClass[v] === max);
     let maxClassImg = _.get(db.chain.get('class_img').value(),maxClass[0]);
     let maxClassName = _.get(db.chain.get('class_name').value(),maxClass[0]);
+    db.chain.update('visitors', n => n + 1).value();
+    db.write();
+    console.log(visitors);
     response.render('./public/index.ejs',{'players': numberWithCommas(players), mostClass: maxClassName, mostClassImg: maxClassImg});
 });
 app.get('/test', function (request, response) {
