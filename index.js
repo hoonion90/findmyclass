@@ -1,7 +1,6 @@
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { LowSync, JSONFileSync } from "lowdb";
-import bodyParser from 'body-parser';
 import _ from 'lodash';
 import url from 'url';
 import express from 'express';
