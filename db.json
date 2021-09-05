@@ -1,18 +1,18 @@
 {
-  "visitors": 8559,
-  "players": 2901,
+  "visitors": 8602,
+  "players": 2902,
   "class_count": {
     "class_01": 4,
     "class_02": 4,
     "class_03": 6,
     "class_04": 3,
     "class_05": 3,
-    "class_06": 3,
+    "class_06": 4,
     "class_07": 5,
     "class_08": 4,
     "class_09": 5
   },
-  "class_count_sum": 37,
+  "class_count_sum": 38,
   "class_img": {
     "class_01": "01_class.jpg",
     "class_02": "02_class.jpg",
