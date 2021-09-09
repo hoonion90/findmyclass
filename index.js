@@ -4,11 +4,21 @@ import { LowSync, JSONFileSync } from "lowdb";
 import _ from 'lodash';
 import url from 'url';
 import express from 'express';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const file = join(__dirname, 'db.json');
 const adapter = new JSONFileSync(file);
 const db = new LowSync(adapter);
+
+const options = {
+    changeOrigin: true,
+    ws: true,
+    router: {'localhost' : 'http://localhost:4000'}
+}
+const blogserver = createProxyMiddleware(options);
+app.use('/blog/', blogserver);
+
 db.read();
 db.chain = _.chain(db.data);
 app.set('view engine','ejs');
