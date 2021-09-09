@@ -14,7 +14,7 @@ const db = new LowSync(adapter);
 const options = {
     changeOrigin: true,
     ws: true,
-    router: {'localhost' : 'http://localhost:4000'}
+    router(req){return 'http://10.0.0.98:4000'}
 }
 const blogserver = createProxyMiddleware(options);
 app.use('/blog/', blogserver);
