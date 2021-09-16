@@ -1,18 +1,18 @@
 {
-  "visitors": 9030,
-  "players": 2912,
+  "visitors": 11192,
+  "players": 4274,
   "class_count": {
-    "class_01": 6,
-    "class_02": 5,
-    "class_03": 6,
-    "class_04": 3,
-    "class_05": 3,
-    "class_06": 4,
-    "class_07": 7,
-    "class_08": 10,
-    "class_09": 5
+    "class_01": 310,
+    "class_02": 57,
+    "class_03": 197,
+    "class_04": 52,
+    "class_05": 38,
+    "class_06": 112,
+    "class_07": 172,
+    "class_08": 218,
+    "class_09": 255
   },
-  "class_count_sum": 49,
+  "class_count_sum": 1411,
   "class_img": {
     "class_01": "01_class.jpg",
     "class_02": "02_class.jpg",
