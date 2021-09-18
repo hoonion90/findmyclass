@@ -54,7 +54,7 @@
       <img src="/img/bg/bg00.jpg" style="width: 100%; margin-top: -2px;">
       <section class="col-12 text-center">
         <span class="fs-4">총 플레이 인원 수</span><br>
-        <span class="fs-1"><%=players%> 명</span>
+        <span class="fs-1"><cnt id="players"></cnt> 명</span>
       </section>
       <section class="col-12 text-center" style="background: #2b2b2b;">
         <span class="fs-4">다른 파티원에게 공유하기</span>
@@ -98,6 +98,32 @@
       function goTest(){
           location.href="/test";
       }
+
+      function numberCounter(target_frame, target_number) {
+          this.count = 0; this.diff = 0;
+          this.target_count = parseInt(target_number);
+          this.target_frame = document.getElementById(target_frame);
+          this.timer = null;
+          this.counter();
+      };
+      numberCounter.prototype.counter = function() {
+          var self = this;
+          this.diff = this.target_count - this.count;
+      
+          if(this.diff > 0) {
+              self.count += Math.ceil(this.diff / 5);
+          }
+      
+          this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      
+          if(this.count < this.target_count) {
+              this.timer = setTimeout(function() { self.counter(); }, 20);
+          } else {
+              clearTimeout(this.timer);
+          }
+      };
+
+      new numberCounter("players", <%=players%>);
   </script>
 </body>
 </html>

@@ -36,7 +36,7 @@ app.get('/', function (request, response) {
     let maxClassName = _.get(db.chain.get('class_name').value(),maxClass[0]);
     db.chain.update('visitors', n => n + 1).value();
     db.write();
-    response.render('./public/index.ejs',{'players': numberWithCommas(players), mostClass: maxClassName, mostClassImg: maxClassImg});
+    response.render('./public/index.ejs',{'players': players, mostClass: maxClassName, mostClassImg: maxClassImg});
 });
 app.get('/test', function (request, response) {
     response.render('./public/find_page.ejs')
