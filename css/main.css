@@ -49,3 +49,6 @@ footer .copyright{width:100%; max-width: 600px; text-align: center; color: #fff;
 .result-main article{background: #fff;}
 .result-main section{background: #0d2f69;}
 .result-msg {background-color:#051b3e; padding: 20px; border-radius: 5px;}
+
+/*liveRE*/
+.livere-section section{background: #fff;}
