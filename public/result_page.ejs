@@ -5,6 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="나의 게임 속 캐릭터 찾기, 모바일 엔터테인먼트 미디어. 심리테스트, 콘텐츠 소개, 공유 제공.">
+  <!--라이브리 프로퍼티 설정-->
+  <meta property="og:description" content="나의 부캐 찾기, 내 안에 숨은 나의 게임 속 캐릭터는 ?" />
+  <meta property="og:site" content="http://watu.me/result?c=<%=classno%>" />
+  <meta property="og:image" content="http://watu.me/img/<%=classImg%>" />
+  <meta property="og:title" content="나의 캐릭터 유형 공유" />
+  <!--라이브리 설정 끝-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link href="/css/main.css" rel="stylesheet">
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
@@ -62,6 +68,28 @@
         <div class="text-center"><button type="button" class="btn btn-primary fs-3" onclick="home();">다시 플레이하기 <img src="
           /img/icons/replay.png" style="width:40px;"/></button></div>
       </section>
+      <section>
+        <!-- 라이브리 시티 설치 코드 -->
+        <div id="lv-container" data-id="city" data-uid="MTAyMC81NDI5NS8zMDc2Ng==">
+          <script type="text/javascript">
+          window.livereOption = {
+            refer: 'watu.com'
+          };
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+  
+              if (typeof LivereTower === 'function') { return; }
+  
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+  
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+          </script>
+        </div>
+        <!-- 시티 설치 코드 끝 -->
+        </section>
     </article>
   </main>
   <footer><div class="copyright">COPYRIGHT(C) CONTENT AGENCY<br>ALL RIGHTS RESERVED</div></footer>
