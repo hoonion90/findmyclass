@@ -53,7 +53,12 @@ app.get('/result', function (request, response) {
     let class_count = _.get(db.chain.get('class_count').value(), queryData.c);
     let poc = Math.round(class_count / class_count_sum * 100000)/1000;
     
-    response.render('./public/result_page.ejs',{className: className, classImg: classImg ,resultmsg: result, poc: poc, classno: resultClass});
+    //result 값 없으면 main으로 redirect.
+    if (!resultClass) {
+        response.redirect('/');
+    } else {
+        response.render('./public/result_page.ejs',{className: className, classImg: classImg ,resultmsg: result, poc: poc, classno: resultClass});
+    }
 });
 
 app.post('/resultcount', function (request, response) {
