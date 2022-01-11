@@ -37,7 +37,11 @@ body{
 article{background-color: #7f4c2f; padding-bottom: 40px;}
 article img{width: 100%; max-width: 600px;}
 section{padding: 10px;}
-footer{position:fixed; bottom: 0; width: 100%; max-width: 600px;}
+footer{ bottom: 0; width: 100%; max-width: 600px;}
+
+@media screen and (max-width: 800px){
+    footer{position: fixed;}
+}
 
 /*test*/
 .question button{padding: 2px 0;}
