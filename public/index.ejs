@@ -13,7 +13,7 @@
   <!--라이브리 설정 끝-->
   <meta name="naver-site-verification" content="1826f3f532b58d6c6d780a0afa0d6eb07ebc9f69" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-  <link href="/css/main.css?v=1.0.0" rel="stylesheet">
+  <link href="/css/main.css?v=1.1.0" rel="stylesheet">
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/neodgm/neodgm.css">
   <link rel="canonical" href="http://watu.me">
@@ -24,70 +24,73 @@
   <%- include('../public/inc/inc_gascript') %>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 0 10px;">
-    <a class="navbar-brand" href="/">watu.me</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/blog/about/">About</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <header>
-    <h1>판타지 게임 속 <br>나의 캐릭터 찾기</h1>
-  </header>
-  <main>
-    <article class="text-white">
-      <img src="/img/bg/bg00.jpg" style="width: 100%; margin-top: -2px;">
-      <section class="col-12 text-center">
-        <span class="fs-4">총 플레이 인원 수</span><br>
-        <span class="fs-1"><cnt id="players"><%=players%></cnt> 명</span>
-      </section>
-      <section class="col-12 text-center" style="background: #2b2b2b;">
-        <span class="fs-4">다른 파티원에게 공유하기</span>
-        <div class="addthis_inline_share_toolbox"></div>
-      </section>
-      <section class="col-12 text-center" style="background-color: #040f21;">
-        <span class="fs-4">현재 가장 많은 유형 : </span>
-        <span class="fs-4"><%=mostClass%></span><br>
-        <img src="/img/<%=mostClassImg%>" style="width: 70%; border-radius: 100%; margin: 15px;">
-      </section>
-      <!-- <section class="livere-section"> -->
-      <!-- 라이브리 시티 설치 코드 -->
-      <!-- <div id="lv-container" data-id="city" data-uid="MTAyMC81NDI5NS8zMDc2Ng==">
-        <script type="text/javascript">
-        window.livereOptions = {
-          refer: 'www.watu.com'
-        };
-        (function(d, s) {
-            var j, e = d.getElementsByTagName(s)[0];
+  <inside>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 0 10px;">
+      <a class="navbar-brand" href="/">watu.me</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/blog/">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blog/about/">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <header>
+      <h1>판타지 게임 속 <br>나의 캐릭터 찾기</h1>
+    </header>
+    <main>
+      <article class="text-white">
+        <img src="/img/bg/bg00.jpg" style="width: 100%; margin-top: -2px;">
+        <section class="col-12 text-center">
+          <span class="fs-4">총 플레이 인원 수</span><br>
+          <span class="fs-1"><cnt id="players"><%=players%></cnt> 명</span>
+        </section>
+        <section class="col-12 text-center" style="background: #2b2b2b;">
+          <span class="fs-4">다른 파티원에게 공유하기</span>
+          <div class="addthis_inline_share_toolbox"></div>
+        </section>
+        <section class="col-12 text-center" style="background-color: #040f21;">
+          <span class="fs-4">현재 가장 많은 유형 : </span>
+          <span class="fs-4"><%=mostClass%></span><br>
+          <img src="/img/<%=mostClassImg%>" style="width: 70%; border-radius: 100%; margin: 15px;">
+        </section>
+        <!-- <section class="livere-section"> -->
+        <!-- 라이브리 시티 설치 코드 -->
+        <!-- <div id="lv-container" data-id="city" data-uid="MTAyMC81NDI5NS8zMDc2Ng==">
+          <script type="text/javascript">
+          window.livereOptions = {
+            refer: 'www.watu.com'
+          };
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
 
-            if (typeof LivereTower === 'function') { return; }
+              if (typeof LivereTower === 'function') { return; }
 
-            j = d.createElement(s);
-            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-            j.async = true;
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
 
-            e.parentNode.insertBefore(j, e);
-        })(document, 'script');
-        </script>
-      </div> -->
-      <!-- 시티 설치 코드 끝 -->
-      <!-- </section> -->
-    </article>
-  </main>
-  <footer>
-    <div class="d-grid gap-2">
-      <button class="btn btn-primary btn-lg fs-3" type="button" onclick="goTest();">내 캐릭터 확인하기🎮</button>
-    </div>
-  </footer>
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+          </script>
+        </div> -->
+        <!-- 시티 설치 코드 끝 -->
+        <!-- </section> -->
+      </article>
+    </main>
+    <footer>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary btn-lg fs-3" type="button" onclick="goTest();">내 캐릭터 확인하기🎮</button>
+      </div>
+    </footer>
+  </inside>
+  <aside></aside>
   <script>
       function goTest(){
           location.href="/test";
