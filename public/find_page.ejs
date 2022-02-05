@@ -94,7 +94,6 @@
     <article class="text-white">
       <div style="max-height: 500px; height:90vw;">
       <img class="bgimg" src="/img/bg/bg01.jpg" style="width: 100%; margin-top: -2px;">
-      <%- include('../public/inc/inc_ga_top') %>
       </div>
       <section id="loader" style="display: none;">
         <div class="loader fs-1">
@@ -217,14 +216,7 @@
   <footer>
     <button id="btnConfirm" class="btn btn-primary btn-lg fs-3" type="button" onclick="goResult();" style="display: none; width:100%; max-width:100%;">결과 확인하기</button>
     <div id="ads" style="display:none;">
-      <amp-ad width="100vw" height="320"
-      type="adsense"
-      data-ad-client="ca-pub-3499947765418335"
-      data-ad-slot="1260077055"
-      data-auto-format="rspv"
-      data-full-width="">
-      <div overflow=""></div>
-      </amp-ad>
+      <%- include('../public/inc/inc_ga_top') %>
     </div>
     <div class="copyright">COPYRIGHT(C) CONTENT AGENCY<br>ALL RIGHTS RESERVED</div></footer>
   </inside>
