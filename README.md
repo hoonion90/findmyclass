@@ -1,6 +1,6 @@
 # findmyclass
 
-https://watu.me
+http://watu.me
 
 ## DB
 
